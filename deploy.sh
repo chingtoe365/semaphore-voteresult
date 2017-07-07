@@ -1,5 +1,5 @@
 #!/bin/bash
-cd semaphore/show && sudo docker build -t semaphore/viewresult .
+cd ~/semaphore/show && sudo docker build -t semaphore/viewresult .
 if [ "$(sudo docker ps -a | grep result)" ]; then
 	sudo docker stop result
 	sudo docker rm result
