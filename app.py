@@ -12,13 +12,23 @@ def get_redis():
         g.redis = Redis(host="redis", db=0, socket_timeout=5)
     return g.redis
 
+# @app.route("/", methods=['POST','GET'])
+# def hello():
+#     redis = get_redis()
+#     raw_data = json.dumps(redis.get('votes'))
+#     resp = make_response(render_template(
+#         'index.html',
+#         raw_data=raw_data
+#     ))
+#     return resp
+
 @app.route("/", methods=['POST','GET'])
 def hello():
-    redis = get_redis()
-    raw_data = json.dumps(redis.get('votes'))
+    # redis = get_redis()
+    # raw_data = json.dumps(redis.get('votes'))
     resp = make_response(render_template(
         'index.html',
-        raw_data=raw_data
+        # raw_data=raw_data
     ))
     return resp
 
