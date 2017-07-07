@@ -1,6 +1,6 @@
 # bash
 cd ~/semaphore/voteresult
-sudo docker build -t semaphore/viewresult .
+sudo docker build -t semaphore/show .
 if [ ! "$(docker ps -a | grep result)" ]; then
 	sudo docker stop result
 fi
