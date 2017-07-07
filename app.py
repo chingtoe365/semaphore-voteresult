@@ -16,8 +16,9 @@ def get_redis():
 def hello():
     redis = get_redis()
     # raw_data = json.dumps(redis.get('votes'))
-    redis.set('foo', 'bar')
-    raw_data = json.dumps(redis.get('foo'))
+    raw_data = json.dumps(redis.lrange('votes', 0, -1))
+    # redis.set('foo', 'bar')
+    # raw_data = json.dumps(redis.get('foo'))
     resp = make_response(render_template(
         'index.html',
         raw_data=raw_data
